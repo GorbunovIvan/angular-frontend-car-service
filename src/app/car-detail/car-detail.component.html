@@ -1,0 +1,23 @@
+<div id="message-about-loading" *ngIf="!car">
+  <p>Loading car details...</p>
+</div>
+
+<div class="car-page" *ngIf="car">
+
+  <div class="title">
+    <h2>Car: {{ car.model }} {{ car.carClass }}{{ car.modelCode }} ({{ car.year }})</h2>
+  </div>
+
+  <div class="car-info">
+    <p>Model: <span class="car-field-value">{{ car.model }}</span></p>
+    <p>Class: <span class="car-field-value">{{ car.carClass }}</span></p>
+    <p>Model-code: <span class="car-field-value">{{ car.modelCode }}</span></p>
+    <p>Year: <span class="car-field-value">{{ car.year }}</span></p>
+  </div>
+
+  <div class="car-management-elemetns">
+    <p><a [routerLink]="['/cars', car.id, 'edit']">Edit</a></p>
+    <button type="submit" (click)="onCarDelete()">Delete</button>
+  </div>
+  
+</div>

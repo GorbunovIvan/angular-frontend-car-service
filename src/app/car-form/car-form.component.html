@@ -1,0 +1,61 @@
+<div id="message-about-loading" *ngIf="!car && editing">
+    <p>Loading car details...</p>
+</div>
+
+<div class="car-form-page" *ngIf="car || !editing">
+
+    <div class="title">
+        <div *ngIf="editing && car">
+            <h2>Editing car: {{ car.model }} {{ car.carClass }}{{ car.modelCode }} ({{ car.year }})</h2>
+        </div>
+        <div *ngIf="!editing">
+            <h2>Adding new car</h2>
+        </div>
+    </div>
+
+    <form class="main-form" [formGroup]="carForm" (ngSubmit)="editing ? onUpdate() : onCreate()">
+
+        <div>
+            <label for="model">Model</label>
+            <input id="model" formControlName="model" type="text" />
+            <div *ngIf="carForm.get('model')?.invalid && carForm.get('model')?.touched">
+                Model is required.
+            </div>
+        </div>
+
+        <div>
+            <label for="car-class">Class</label>
+            <input id="car-class" formControlName="carClass" type="text"/>
+            <div *ngIf="carForm.get('carClass')?.invalid && carForm.get('carClass')?.touched">
+                Class is required.
+            </div>
+        </div>
+
+        <div>
+            <label for="model-code">Model Code</label>
+            <input id="model-code" formControlName="modelCode" type="text"/>
+            <div *ngIf="carForm.get('carClass')?.invalid && carForm.get('modelCode')?.touched">
+                Model-code is required.
+            </div>
+        </div>
+
+        <div>
+          <label for="year">Year</label>
+          <input id="year" formControlName="year" type="number" />
+          <div *ngIf="carForm.get('year')?.invalid">
+            <p *ngIf="carForm.get('year')?.errors?.['min']">Year cannot be before 1886.</p>
+            <p *ngIf="carForm.get('year')?.errors?.['max']">Future year cannot be chosen.</p>
+          </div>
+        </div>
+
+        <div>
+            <div *ngIf="editing">
+                <button type="submit" [disabled]="carForm.invalid">Update</button>
+            </div>
+            <div *ngIf="!editing">
+                <button type="submit" [disabled]="carForm.invalid">Add</button>
+            </div>
+        </div>
+
+    </form>
+</div>

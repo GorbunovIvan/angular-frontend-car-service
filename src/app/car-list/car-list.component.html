@@ -1,0 +1,17 @@
+<div class="cars-page">
+
+  <div class="title">
+    <h2>Cars</h2>
+  </div>
+
+  <div class="cars-list">
+    <ul>
+      <li *ngFor="let car of cars">
+        <a [routerLink]="['/cars', car.id]">
+            {{ car.model }} {{ car.carClass }}{{ car.modelCode }} ({{ car.year }})
+        </a>
+      </li>
+    </ul>
+  </div>
+
+</div>
