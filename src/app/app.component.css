@@ -1,0 +1,42 @@
+::ng-deep body {
+    background-color: bisque;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin: 0px;
+    margin-top: 0px;
+}
+
+::ng-deep a {
+    text-decoration: none;
+    color: navy;
+}
+
+::ng-deep a:hover {
+    opacity: 0.7;
+}
+
+::ng-deep main {
+    margin: 10px;
+}
+
+::ng-deep header {
+    background-color: burlywood;
+    margin: 0px;
+    padding: 3px;
+}
+
+::ng-deep ul .header-menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    font-weight: bold;
+}
+
+::ng-deep .header-menu li {
+  display: inline-block;
+  margin-right: 20px;
+  font-weight: bold;
+}
+
+::ng-deep #message-about-loading {
+    font-style: italic;
+}

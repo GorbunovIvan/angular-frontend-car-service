@@ -1,0 +1,8 @@
+.car-form-page .main-form label {
+    display: inline-block;
+    width: 100px;
+}
+
+.car-form-page .main-form input {
+    padding: 1px;
+}
