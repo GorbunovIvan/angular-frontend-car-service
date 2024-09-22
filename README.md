@@ -1,3 +1,7 @@
+<h2>Car-service - Angular web application</h2>
+<p>A simple frontend service written in Angular, uses <strong>spring-backend-for-angular-frontend-car-service</strong> as a backend</p>
+<hr/>
+
 # AngularFrontendCarService
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.4.
